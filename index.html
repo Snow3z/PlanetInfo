@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planet Info by YS</title>
+    <title>Planet Info by snow._.3z/YS</title>
     <style>
         /* Starry background */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #001F3F; /* Deep blue background */
+            background: radial-gradient(circle at center, #001848 20%, #000814 100%);
             min-height: 100vh;
             color: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative; /* Needed for absolute positioning of stars */
-            overflow: hidden; /* Prevent scrollbars */
         }
 
-      
+    
         }
 
         /* Title */
         h1 {
             font-size: 3rem;
             margin: 20px;
-            color: #00d1ff; /* Bright cyan color */
+            color: #00d1ff;
         }
 
         /* Menu buttons */
@@ -35,24 +33,22 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 20px; /* Spacing above buttons */
         }
-        
+
         .menu button {
             margin: 10px;
             padding: 15px;
             font-size: 1.2rem;
             border: none;
-            background-color: #005577; /* Dark blue background */
+            background-color: #005577;
             color: white;
             cursor: pointer;
             border-radius: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for hover effects */
+            transition: background-color 0.3s ease;
         }
-        
+
         .menu button:hover {
-            background-color: #0099cc; /* Lighter blue on hover */
-            transform: scale(1.05); /* Slightly grow the button on hover */
+            background-color: #0099cc;
         }
 
         /* Planet info display */
@@ -61,11 +57,10 @@
             margin-top: 20px;
             display: none;  /* Hide by default */
         }
-        
+
         .info img {
-            max-width: 250px; /* Slightly larger images */
+            max-width: 200px;
             margin: 20px 0;
-            border-radius: 10px; /* Round the corners of images */
         }
 
         /* Responsive for mobile */
@@ -78,11 +73,34 @@
                 padding: 10px;
             }
         }
+
+        /* Positioning the Discord button */
+        .discord-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .discord-button button {
+            padding: 10px 15px;
+            background-color: #7289da; /* Discord color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .discord-button button:hover {
+            background-color: #5b6eae; /* Darker shade on hover */
+        }
     </style>
 </head>
 <body>
 
- 
+    <!-- Starry background -->
+    <div class="stars"></div>
 
     <!-- Title -->
     <h1>Planet Info By YS</h1>
@@ -106,6 +124,11 @@
         <p id="planet-description"></p>
         <img id="planet-image" src="" alt="Planet Image">
         <ul id="planet-details"></ul>
+    </div>
+
+    <!-- Discord Button -->
+    <div class="discord-button">
+        <button onclick="window.open('YOUR_DISCORD_INVITE_LINK', '_blank')">Join Our Discord for Suggestions!</button>
     </div>
 
     <script>
@@ -172,60 +195,14 @@
 
             details.innerHTML = '';
             for (const [key, value] of Object.entries(planetData[planet].details)) {
-                details.innerHTML += `<li>${key}: ${value}</li>`; // Use backticks for template literals
+                details.innerHTML += `<li>${key}: ${value}</li>`;
             }
 
             infoDiv.style.display = 'block';  // Show the info section
         }
     </script>
 
-    <h10> Version: 0.1 </h10> <!-- Using h10 for version display -->
-</body><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planet Info by snow._.3z/YS</title>
-    <style>
-        /* Existing styles... */
-
-        /* Positioning the Discord button */
-        .discord-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 10;
-        }
-
-        .discord-button button {
-            padding: 10px 15px;
-            background-color: #7289da; /* Discord color */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .discord-button button:hover {
-            background-color: #5b6eae; /* Darker shade on hover */
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Existing content... -->
-
-    <!-- Discord Button -->
-    <div class="discord-button">
-        <button onclick="window.open('https://discord.gg/zXTUYArnMc', '_blank')">Join Our Discord for Suggestions!</button>
-    </div>
-
-    <script>
-        // Existing script...
-    </script>
+    <h10> version:0.1</h10>
 </body>
 </html>
 
-
-</html>
